@@ -1,5 +1,6 @@
 using System;
 using ShapeTracker.Models;
+using System.Collections.Generic;
 
 namespace ShapeTracker
 {
@@ -7,18 +8,28 @@ namespace ShapeTracker
   {
     static void Main()
     {
-      Triangle testTriangle = new Triangle(3,4,5);
-      Console.WriteLine($"Side one is: {testTriangle.GetSide1()}");
-      Console.WriteLine($"Side two is: {testTriangle.GetSide2()}");
-      Console.WriteLine($"Side three is: {testTriangle.GetSide3()}");
-      Console.WriteLine("Calculating type of triangle..");
-      Console.WriteLine($"Triangle type: {testTriangle.CheckType()}.");
-      Console.WriteLine("Updating sides...");
-      testTriangle.SetSide1(44);
-      testTriangle.SetSide2(44);
-      testTriangle.SetSide3(70);
-      Console.WriteLine($"The triangle's sides are now {testTriangle.GetSide1()}, {testTriangle.GetSide2()}, and {testTriangle.GetSide3()}");
-      Console.WriteLine($"Now the triangle is: {testTriangle.CheckType()}.");
+      List<Triangle> allTriangles = Triangle.GetAll();
+      Triangle testTriangle = new Triangle(3, 4, 5);
+      Triangle secondTriangle = new Triangle(32, 74, 75);
+
+      Triangle.ClearAll();
+
+      if (allTriangles.Count == 0)
+      {
+        Console.WriteLine("No triangles.");
+      }
+      else
+      {
+        Console.WriteLine("You have triangles!");
+        Console.WriteLine("---------------------");
+        foreach (Triangle tri in allTriangles)
+        {
+          Console.WriteLine($"1st Side: {tri.GetSide1()}");
+          Console.WriteLine($"2nd Side: {tri.GetSide2()}");
+          Console.WriteLine($"3rd Side: {tri.GetSide3()}");
+          Console.WriteLine("---------------------");
+        }
+      }
     }
   }
 }
