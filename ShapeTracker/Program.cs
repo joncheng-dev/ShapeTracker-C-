@@ -23,6 +23,65 @@ namespace ShapeTracker
       int length3 = int.Parse(strNumber3);
 
       Triangle tri = new Triangle(length1, length2, length3);
+
+      ConfirmOrEditTriangle(tri);
+    }
+
+    static void ConfirmOrEditTriangle(Triangle tri)
+    {
+      Console.WriteLine("Please confirm that you entered in your triangle correctly:");
+      Console.WriteLine($"Side 1 has a length of {tri.GetSide1()}.");
+      Console.WriteLine($"Side 2 has a length of {tri.GetSide2()}.");
+      Console.WriteLine($"Side 3 has a length of {tri.GetSide3()}.");
+      Console.WriteLine("Is that correct? Enter 'yes' to proceed, or 'no' to re-enter the triangle's sides");
+      
+      string userInput = Console.ReadLine();
+
+
+      if (userInput == "yes")
+      {
+        CheckTriangleType(tri);
+      }
+      else
+      {
+
+        Console.WriteLine("Let's fix your triangle. Enter the 3 sides again.");
+        
+        Console.WriteLine("Enter 1st side:");
+        string stringNumber1 = Console.ReadLine();
+        Console.WriteLine("Enter 2nd side:");
+        string stringNumber2 = Console.ReadLine();
+        Console.WriteLine("Enter 3rd side:");
+        string stringNumber3 = Console.ReadLine();
+        
+        tri.SetSide1(int.Parse(stringNumber1));
+        tri.SetSide2(int.Parse(stringNumber2));
+        tri.SetSide3(int.Parse(stringNumber3));
+        
+        ConfirmOrEditTriangle(tri);
+      }
+    }
+
+    static void CheckTriangleType(Triangle tri)
+    {
+      string result = tri.CheckType();
+      Console.WriteLine("-----------------------------------------");
+      Console.WriteLine("Your result is: " + result + ".");
+      Console.WriteLine("-----------------------------------------");
+
+      Console.WriteLine("What's next?");
+      Console.WriteLine("Would you like to check a new triangle (new)?");
+      Console.WriteLine("Please enter 'new' to check the type of a new triangle. To exit, enter any key.");
+
+      string userResponse = Console.ReadLine();
+      if (userResponse == "new" || userResponse == "New")
+      {
+        Main();
+      }
+      else 
+      {
+        Console.WriteLine("Goodbye.");
+      }
     }
   }
 }
