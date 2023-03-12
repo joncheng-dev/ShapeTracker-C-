@@ -12,7 +12,7 @@ namespace ShapeTracker.Tests
     {
       Triangle.ClearAll();
     }
-    
+
     [TestMethod]
     public void TriangleConstructor_CreatesInstanceOfTriangle_Triangle()
     {
@@ -117,6 +117,17 @@ namespace ShapeTracker.Tests
       List<Triangle> actual = Triangle.GetAll();
 
       CollectionAssert.AreEqual(expected, actual);
+    }
+
+    [TestMethod]
+    public void ClearAll_DeletesAllTrianglesInList_Void()
+    {
+      Triangle tri1 = new Triangle(2, 2, 9);
+      Triangle tri2 = new Triangle(21, 3, 9);
+      Triangle tri3 = new Triangle(1, 3, 9);
+      List<Triangle> expected = new List<Triangle> { };
+      Triangle.ClearAll();
+      CollectionAssert.AreEqual(expected, Triangle.GetAll());
     }
   }
 }
