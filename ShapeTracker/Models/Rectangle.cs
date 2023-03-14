@@ -10,9 +10,12 @@ namespace ShapeTracker.Models
       set { _side1 = value; }
     }
 
-    public Rectangle( int length1)
+    public int Side2 { get; }
+
+    public Rectangle( int length1, int length2)
     {
       _side1 = length1;
+      Side2 = length2;
     }
   }
 }
