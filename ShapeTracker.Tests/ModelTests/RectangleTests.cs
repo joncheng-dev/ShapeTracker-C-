@@ -50,5 +50,13 @@ namespace ShapeTracker.Tests
       newRectangle.Side2 = newLength2;
       Assert.AreEqual(newRectangle.Side2, newLength2);
     }
+
+    [TestMethod]
+    public void CalculateRectangleArea_ReturnsRectangleArea_Int()
+    {
+      Rectangle newRectangle = new Rectangle(5, 6);
+      int area = newRectangle.CalcArea();
+      Assert.AreEqual(30, area);
+    }
   }
 }
