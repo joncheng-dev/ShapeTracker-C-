@@ -10,7 +10,22 @@ namespace ShapeTracker
     {
       Console.WriteLine("*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
       Console.WriteLine("Welcome to the Shape Tracker App!");
-      UserChoosesTriangle();
+      Console.WriteLine("For triangles, enter '1'. For rectangles, enter '2'.");
+      string userResponse = Console.ReadLine();
+
+      if (userResponse == "1")
+      {
+        UserChoosesTriangle();
+      } 
+      else if (userResponse == "2")
+      {
+        UserChoosesRectangle();
+      } 
+      else 
+      {
+        Console.WriteLine("For triangles, enter '1'. For rectangles, enter '2'.");
+      }
+
     }
 
     static void UserChoosesTriangle()
@@ -32,6 +47,30 @@ namespace ShapeTracker
       Triangle tri = new Triangle(length1, length2, length3);
 
       ConfirmOrEditTriangle(tri);
+    }
+
+    static void UserChoosesRectangle()
+    {
+      Console.WriteLine("You have chosen 'rectangle'");
+      Console.WriteLine("We'll calculate the area of the rectangle you have based off of the lengths of the rectangle's 2 sides.");
+
+      Console.WriteLine("Enter length of 1st side:");
+      string strNumber1 = Console.ReadLine();
+      Console.WriteLine("Enter length of 2nd side:");
+      string strNumber2 = Console.ReadLine();
+
+      int length1 = int.Parse(strNumber1);
+      int length2 = int.Parse(strNumber2);
+
+      Rectangle rect = new Rectangle(length1, length2);
+
+      int result = CalculateRectangleArea(rect);
+      Console.WriteLine($"Your rectangle's area is {result}.");
+    }
+
+    static int CalculateRectangleArea(Rectangle rect)
+    {
+      return (rect.Side1 * rect.Side2);
     }
 
     static void ConfirmOrEditTriangle(Triangle tri)
