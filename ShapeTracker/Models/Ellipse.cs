@@ -7,6 +7,7 @@ namespace ShapeTracker.Models
     public int Side1
     {
       get { return _side1; }
+      set { _side1 = value; }
     }
 
     public Ellipse(int length1, int length2)

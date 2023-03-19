@@ -23,5 +23,14 @@ namespace ShapeTracker.Tests
       int result = newEllipse.Side1;
       Assert.AreEqual(length1, result);
     }
+
+    [TestMethod]
+    public void SetSide1_SetsValueOfSide1_Void()
+    {
+      Ellipse newEllipse = new Ellipse(3, 1);
+      int newLength1 = 5; 
+      newEllipse.Side1 = newLength1;
+      Assert.AreEqual(newEllipse.Side1, newLength1);
+    }
   }
 }
