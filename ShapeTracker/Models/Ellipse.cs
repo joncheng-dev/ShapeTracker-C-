@@ -2,17 +2,24 @@ namespace ShapeTracker.Models
 {
   public class Ellipse
   {
-    private int _side1;
+    private int _number1;
+    private int _number2;
 
-    public int Side1
+    public int Number1
     {
-      get { return _side1; }
-      set { _side1 = value; }
+      get { return _number1; }
+      set { _number1 = value; }
     }
 
     public Ellipse(int length1, int length2)
     {
-      _side1 = length1; 
+      _number1 = length1;
+      _number2 = length2;
+    }
+
+    public int GetNumber2()
+    {
+      return _number2;
     }
   }
 }

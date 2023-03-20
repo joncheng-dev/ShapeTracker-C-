@@ -16,21 +16,30 @@ namespace ShapeTracker.Tests
     }
 
     [TestMethod]
-    public void GetSide1_ReturnsSide1_Int()
+    public void GetNumber1_ReturnsNumber1_Int()
     {
       int length1 = 2;
       Ellipse newEllipse = new Ellipse(length1, 3);
-      int result = newEllipse.Side1;
+      int result = newEllipse.Number1;
       Assert.AreEqual(length1, result);
     }
 
     [TestMethod]
-    public void SetSide1_SetsValueOfSide1_Void()
+    public void SetNumber1_SetsValueOfNumber1_Void()
     {
       Ellipse newEllipse = new Ellipse(3, 1);
       int newLength1 = 5; 
-      newEllipse.Side1 = newLength1;
-      Assert.AreEqual(newEllipse.Side1, newLength1);
+      newEllipse.Number1 = newLength1;
+      Assert.AreEqual(newEllipse.Number1, newLength1);
+    }
+
+    [TestMethod]
+    public void GetNumber2_ReturnsNumber2_Int()
+    {
+      int length2 = 5;
+      Ellipse newEllipse = new Ellipse(2, length2);
+      int result = newEllipse.GetNumber2();
+      Assert.AreEqual(result, length2);
     }
   }
 }
