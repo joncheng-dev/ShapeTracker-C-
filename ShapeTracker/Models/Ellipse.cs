@@ -21,5 +21,10 @@ namespace ShapeTracker.Models
     {
       return _number2;
     }
+
+    public void SetNumber2(int newValue)
+    {
+      _number2 = newValue;
+    }
   }
 }

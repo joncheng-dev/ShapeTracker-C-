@@ -41,5 +41,14 @@ namespace ShapeTracker.Tests
       int result = newEllipse.GetNumber2();
       Assert.AreEqual(result, length2);
     }
+
+    [TestMethod]
+    public void SetNumber2_SetsValueofNumber2_Void()
+    {
+      Ellipse newEllipse = new Ellipse(3, 4);
+      int newLength2 = 6;
+      newEllipse.SetNumber2(newLength2);
+      Assert.AreEqual(newLength2, newEllipse.GetNumber2());
+    }
   }
 }
