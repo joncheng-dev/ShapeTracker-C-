@@ -56,7 +56,7 @@ namespace ShapeTracker.Tests
     {
       Ellipse newEllipse = new Ellipse(2, 3);
       double area = newEllipse.CalculateEllipseArea();
-      Assert.AreEqual(18.84, area);
+      Assert.AreEqual(18.84955592153876, area);
     }
   }
 }

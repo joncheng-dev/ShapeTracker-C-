@@ -1,3 +1,5 @@
+using System;
+
 namespace ShapeTracker.Models
 {
   public class Ellipse
@@ -29,7 +31,7 @@ namespace ShapeTracker.Models
 
     public double CalculateEllipseArea()
     {
-      return 18.84;
+      return Math.PI * _radius1 * _radius2;
     }
   }
 }
