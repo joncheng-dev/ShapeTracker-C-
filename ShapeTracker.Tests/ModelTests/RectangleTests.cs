@@ -55,7 +55,7 @@ namespace ShapeTracker.Tests
     public void CalculateRectangleArea_ReturnsRectangleArea_Int()
     {
       Rectangle newRectangle = new Rectangle(5, 6);
-      int area = newRectangle.CalcArea();
+      int area = newRectangle.CalculateRectangleArea();
       Assert.AreEqual(30, area);
     }
   }

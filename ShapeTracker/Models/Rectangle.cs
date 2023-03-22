@@ -18,7 +18,7 @@ namespace ShapeTracker.Models
       Side2 = length2;
     }
 
-    public int CalcArea()
+    public int CalculateRectangleArea()
     {
       return _side1 * Side2;
     }

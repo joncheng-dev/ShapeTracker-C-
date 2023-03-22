@@ -16,39 +16,47 @@ namespace ShapeTracker.Tests
     }
 
     [TestMethod]
-    public void GetNumber1_ReturnsNumber1_Int()
+    public void GetRadius1_ReturnsRadius1_Int()
     {
       int length1 = 2;
       Ellipse newEllipse = new Ellipse(length1, 3);
-      int result = newEllipse.Number1;
+      int result = newEllipse.Radius1;
       Assert.AreEqual(length1, result);
     }
 
     [TestMethod]
-    public void SetNumber1_SetsValueOfNumber1_Void()
+    public void SetRadius1_SetsValueOfRadius1_Void()
     {
       Ellipse newEllipse = new Ellipse(3, 1);
       int newLength1 = 5; 
-      newEllipse.Number1 = newLength1;
-      Assert.AreEqual(newEllipse.Number1, newLength1);
+      newEllipse.Radius1 = newLength1;
+      Assert.AreEqual(newEllipse.Radius1, newLength1);
     }
 
     [TestMethod]
-    public void GetNumber2_ReturnsNumber2_Int()
+    public void GetRadius2_ReturnsRadius2_Int()
     {
       int length2 = 5;
       Ellipse newEllipse = new Ellipse(2, length2);
-      int result = newEllipse.GetNumber2();
+      int result = newEllipse.GetRadius2();
       Assert.AreEqual(result, length2);
     }
 
     [TestMethod]
-    public void SetNumber2_SetsValueofNumber2_Void()
+    public void SetRadius2_SetsValueofRadius2_Void()
     {
       Ellipse newEllipse = new Ellipse(3, 4);
       int newLength2 = 6;
-      newEllipse.SetNumber2(newLength2);
-      Assert.AreEqual(newLength2, newEllipse.GetNumber2());
+      newEllipse.SetRadius2(newLength2);
+      Assert.AreEqual(newLength2, newEllipse.GetRadius2());
+    }
+
+    [TestMethod]
+    public void CalculateEllipseArea_ReturnsEllipseArea_Double()
+    {
+      Ellipse newEllipse = new Ellipse(2, 3);
+      double area = newEllipse.CalculateEllipseArea();
+      Assert.AreEqual(18.84, area);
     }
   }
 }
