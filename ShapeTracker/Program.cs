@@ -48,13 +48,21 @@ namespace ShapeTracker
       Console.WriteLine("Enter length of 3rd side:");
       string strNumber3 = Console.ReadLine();
 
-      int length1 = int.Parse(strNumber1);
-      int length2 = int.Parse(strNumber2);
-      int length3 = int.Parse(strNumber3);
+      try 
+      {
+        int length1 = int.Parse(strNumber1);
+        int length2 = int.Parse(strNumber2);
+        int length3 = int.Parse(strNumber3);
 
-      Triangle tri = new Triangle(length1, length2, length3);
+        Triangle tri = new Triangle(length1, length2, length3);
 
-      ConfirmOrEditTriangle(tri);
+        ConfirmOrEditTriangle(tri);
+      }
+      catch
+      {
+        Console.WriteLine("Error. Please enter only integers. Try again.");
+        UserChoosesTriangle();
+      }
     }
 
     static void UserChoosesRectangle()
